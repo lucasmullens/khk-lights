@@ -1,0 +1,5 @@
+Version 0.1.0:
+
+- Added Config.ini for simple editing of program parameters.
+- Outsourced Light Switching algorithm to a seperate module.
+- Expanded functionality for a rotational state switching pattern.

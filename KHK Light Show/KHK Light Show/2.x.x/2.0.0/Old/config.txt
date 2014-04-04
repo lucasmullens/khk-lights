@@ -1,0 +1,97 @@
+################################Beat Detection##################################
+### Note: Some sections require an array of values.  These values are separated 
+###		  by commas.  Every value in the array must be on the same line.
+###		  The length the array is supposed to be is specified by another value.
+###		  Refer to the Readme for more info.
+
+##### Sampling Configuration #####
+DEVICE = 0
+SAMPLE_SIZE = 1024
+CHANNELS = 2
+SAMPLE_RATE = 22050
+
+##### Frequency Band Configuration #####
+USE_BANDS = 0
+NUM_BANDS = 6
+IGNORE_HIGHEST_BAND = 1
+RANGES_PRCT =  
+
+##### Trigger Calculations #####
+DYNAMIC_TRIGGER = 1
+LINREG_A =
+LINREG_B =
+MAIN_TRIGGER_CONSTANT = 1.5
+TRIGGER_CONSTANTS = 1.5 1.5 1.5 1.5 1.5
+
+##### History Buffer Configuration #####
+DYNAMIC_HISTORY = 1
+BUFFER_SIZE = 22
+
+################################Light Control###################################
+### Note: only one option in Configuration section may have a 1 by it, or the 
+###		  config file will be deemed corrupt and default to standard values.
+###		  Light Groups are arrays, and each line must be terminated with a ';'.  
+###		  Refer to the Readme for more info.
+
+##### Light Groups #####
+YELLOW =
+PURPLE =
+RED =
+GREEN =
+BLUE =
+FLASHERS =
+SPOTLIGHT =
+DISCO =
+YELLOW_CYCLOPS =
+PURPLE_CYCLOPS =
+ORANGE_CYCLOPS =
+
+##### Configuration #####
+Random Lights = 0
+KHK Theme = 0
+RGB Theme = 0
+Rotation = 0
+Epic Lights = 1
+
+##### Random Lights #####
+DELAY_RAND = 5
+USE_DELAY_RAND = 1
+MAXLIT = 10
+MINTURNON = 3
+AVOID_DUPLICATION = 1
+ALWAYS_DISCO = 1
+INDEXS_RAND = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18;
+
+##### KHK Theme #####
+DELAY_KHK = 5
+USE_DELAY_KHK = 0
+PURPLE_LIGHTS =
+YELLOW_LIGHTS =
+USE_STROBE_KHK = 1
+USE_FLASHERS_KHK = 1
+
+##### RGB Theme #####
+DELAY_RGB = 5
+USE_DELAY_RGB = 0
+RED_LIGHTS =
+GREEN_LIGHTS =
+BLUE_LIGHTS =
+USE_STROBE_RGB =
+USE_FLASHERS_RGB =
+
+##### Rotation #####
+DELAY_ROTATE = 5
+USE_DELAY_ROTATE = 0
+NUM_CONFIGS = 6
+CONFIG1 =
+CONFIG2 =
+CONFIG3 =
+CONFIG4 =
+CONFIG5 =
+CONFIG6 =
+
+##### Epic Lights #####
+DELAY_EPIC = 5
+USE_DELAY_EPIC = 0
+USE_STROBE_EPIC = 1
+USE_FLASHERS_EPIC = 1

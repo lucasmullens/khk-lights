@@ -1,0 +1,60 @@
+- Main Implementation:
+	- Retrieve runtime configuration from config.ini
+	- Setup LightStatus object
+	- Setup LightSelector object
+	- Setup LightController object
+	- Setup Array of BeatDetector objects
+		- full Band BeatDetector is 0, low Band is 1, ..., high Band is n.
+	- Setup pyaudio* object
+	- Enter Infinite Loop:
+		- Open audio stream and capture frame
+		- Resolve frame to a single channel configuration
+		- Pass frame (in appropriate size & form) to BeatDetector objects for analysis
+		- Pass BeatDetector array to analyzeMusicFrame subroutine and accept MusicFrameData
+		- Pass MusicFrameData and lightStatus object to LightSelector object and mutate lightStatus object
+		- Parse lightStatus info and pass to LightController appropriately
+
+NOTES: I would really like to put lightController in a thread so that I don't have to worry about it.
+
+
+- LightStatus object - Represents the current on-off state for every light.
+	- Instance Variables
+		- An array of booleans for every light (0=off 1=on) (init = False)
+	- Methods
+		- getStatusArray() - return boolean[]
+		- getStatus(int lightIndex) - return boolean
+		- setStatusArray(boolean[] statuses)
+		- setStatus(int lightIndex, boolean status)
+		- setOn(int[] indecies)
+		- setOff(int[] indecies)
+
+- LightSelector object - Holds info from config file to select appropriate lighting
+	- Instance Variables
+		- Should include all config info related to lights
+	- Methods
+		- selectLights(MusicFrameData data, LightStatus lightStatuses)
+	- private Methods
+		- one selectLights sub-function for each light configuration in the config file.
+
+- LightController object - Communicates with uProcs to turn on/off physical lights.
+	- Instance Variables
+		-
+	- Methods
+		- turnOn(int[] pins, float timeout) - (timeout=0 specifies no timeout)
+		- turnOff(int[] pins, float timeout) - (timeout=0 specifies no timeout)
+
+- BeatDetector object - Maintains a history for a specific freq band and uses it to detect beats on that band
+	- Instance Variables
+		- All beat detection variables in config file
+	- Methods
+		- Accessor methods for each instance variable
+		- detectBeat(float[] frameData)
+	- private Methods
+		- calcHistBuffSize()
+
+- MusicFrameData object - a wrapper object for all data analyzed for the audio analysis.  This object is specifically designed to be passed to a LightSelector object for use in selecting appropriate lights.
+	- Instance Variables
+		- 
+
+- analyzeMusicFrame(BeatDetector[] beatDetectors) - return MusicFrameData
+	- not an object.  Simply a subroutine that returns a MusicFrameData object.

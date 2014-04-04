@@ -1,0 +1,10 @@
+Version 0.2.0:
+- Moved BeatDetection and history tracking to a seperate module.
+- Removed detection prevention of the same beat multiple times.
+	(This was for visualization purposes, not accuracy).
+
+Version 0.1.0:
+
+- Added Config.ini for simple editing of program parameters.
+- Outsourced Light Switching algorithm to a seperate module.
+- Expanded functionality for a rotational state switching pattern.
