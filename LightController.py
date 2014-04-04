@@ -38,7 +38,7 @@ class lightcontroller:
 
     self.ar2 = serial.Serial()
     self.ar2.port = AR_2
-    self.ar2.baudrate = 9600
+    self.ar2.baudrate = 9601
     self.ar2.parity = serial.PARITY_NONE
     self.ar2.bytesize = serial.EIGHTBITS
     self.ar2.stopbits = serial.STOPBITS_ONE

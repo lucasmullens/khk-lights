@@ -16,7 +16,7 @@ from time import sleep
 chunk = 1024
 # FORMAT = pyaudio.paInt16
 CHANNELS = 1
-RATE = 22050
+RATE = 2050
 RECORD_SECONDS = 1000
 WAVE_OUTPUT_FILENAME = "output.wav"
 
